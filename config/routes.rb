@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     get "/actor/:id" => "pages#get_actor_action"
 
     get "/movies" => "movies#index"  # show all movies
-    get "/movies/:id" => "movies#show"  # show specific movie
+    get "/movies/:id" => "movies#show"  # show specific movie (url segment param)
+    # query param single movie:
+    get "/movies" => "movies#show"
+    # body param single movie:
+    post "/movies" => "movies#show"
 
   end
 
