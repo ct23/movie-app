@@ -4,14 +4,18 @@ Rails.application.routes.draw do
 
   # EXAMPLE JSON ROUTE WITH API NAMESPACE
   namespace :api do
-    get "/actor/:id" => "pages#get_actor_action"
+    get "/actor" => "pages#index"           # index
+    get "/actor/:id" => "pages#show"        # show
+    post "/actor/" => "pages#create"        # create
+    patch "/actor/:id" => "pages#update"    # update
+    delete "/actor/:id" => "pages#destroy"  # destroy
 
-    get "/movies" => "movies#index"  # show all movies
-    get "/movies/:id" => "movies#show"  # show specific movie (url segment param)
-    # query param single movie:
-    get "/movies" => "movies#show"
-    # body param single movie:
-    post "/movies" => "movies#show"
+
+    get "/movie" => "movies#index"            # index
+    get "/movie/:id" => "movies#show"         # show specific movie (url segment param)
+    post "/movie" => "movies#create"          # create
+    patch "/movie/:id" => "movies#update"     # update
+    delete "/movie/:id" => "movies#destroy"    # destroy
 
   end
 

@@ -1,5 +1,6 @@
 {
-  firstName: @actor.first_name,
-  lastName: @actor.last_name,
-  knownFor: @actor.known_for
+  first_name: @actor.first_name,
+  last_name: @actor.last_name,
+  known_for: @actor.known_for,
+  id: @actor.id
 }

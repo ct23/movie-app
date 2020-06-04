@@ -10,4 +10,28 @@ class Api::MoviesController < ApplicationController
     render "show.json.jb"
   end
 
+  def create
+    @movie = Movie.create(
+      title: params[:title],
+      year: params[:year],
+      plot: params[:plot]
+    )
+    render "show.json.jb"
+  end
+
+  def update
+    @movie = Movie.find_by(id: params[:id])
+    @movie.title = params[:title] || @movie.title
+    @movie.year = params[:year] || @movie.year
+    @movie.plot = params[:plot] || @movie.plot
+    @movie.save
+    render "show.json.jb"
+  end
+
+  def destroy
+    id = params[:id]
+    @movie = Movie.find_by(id: id)
+    @movie.destroy
+    render json: {message: "Movie with id #{id} has been deleted."}
+  end
 end
