@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get "/movie/:id" => "movies#show"         # show specific movie (url segment param)
     post "/movie" => "movies#create"          # create
     patch "/movie/:id" => "movies#update"     # update
-    delete "/movie/:id" => "movies#destroy"    # destroy
+    delete "/movie/:id" => "movies#destroy"   # destroy
 
   end
 
