@@ -1,6 +1,1 @@
-{
-  title: @movie.title,
-  year: @movie.year,
-  plot: @movie.plot,
-  id: @movie.id
-}
+  render partial: "movie.json.jb", locals: { movie: @movie }
