@@ -22,6 +22,7 @@ class Api::MoviesController < ApplicationController
       render "show.json.jb"
     else
       render json: { errors: @movie.errors.full_messages }, status: 422
+    end
   end
 
   def update
@@ -35,6 +36,7 @@ class Api::MoviesController < ApplicationController
       render "show.json.jb"
     else
       render json: { errors: @movie.errors.full_messages }, status: 422
+    end
   end
 
   def destroy

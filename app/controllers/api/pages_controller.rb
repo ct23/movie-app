@@ -23,6 +23,7 @@ class Api::PagesController < ApplicationController
       render 'indiv_actor.json.jb'
     else
       render json: { errors: @movie.errors.full_messages }, status: 422
+    end
   end
   
   def update
@@ -36,6 +37,7 @@ class Api::PagesController < ApplicationController
       render 'indiv_actor.json.jb'
     else
       render json: { errors: @actor.errors.full_messages }, status: 422
+    end
   end
 
   def destroy
