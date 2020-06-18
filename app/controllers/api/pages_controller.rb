@@ -17,12 +17,13 @@ class Api::PagesController < ApplicationController
       last_name: params[:last_name],
       known_for: params[:known_for],
       gender: params[:gender],
-      age: params[:age]
+      age: params[:age],
+      movie_id: params[:movie_id]
     )
-    if actor.save
+    if @actor.save
       render 'indiv_actor.json.jb'
     else
-      render json: { errors: @movie.errors.full_messages }, status: 422
+      render json: { errors: @actor.errors.full_messages }, status: 422
     end
   end
   
@@ -33,6 +34,7 @@ class Api::PagesController < ApplicationController
     @actor.known_for = params[:known_for] || @actor.known_for
     @actor.gender = params[:gender] || @actor.gender
     @actor.age = params[:age] || @actor.age
+    @actor.movie_id = params[:movie_id] || @actor.movie_id
     if (@actor.save)
       render 'indiv_actor.json.jb'
     else
