@@ -1,4 +1,7 @@
 class Api::PagesController < ApplicationController
+
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @actors = Actor.all.order(age: :desc)
     render 'index_actor.json.jb'
