@@ -1,0 +1,11 @@
+<h1> Movies </h1>
+
+<h2><%= @movie.title %></h2>
+<h3><%= @movie.year %></h3>
+<h4><%= @movie.plot %></h4>
+
+<form method="POST">
+  <label for="movie_name">Movie Name</label>
+  <input id="movie_name" type="text" name="movie_name">
+  <button>Submit</button>
+</form>
